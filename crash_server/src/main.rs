@@ -33,7 +33,11 @@ fn main() {
         })
         .add_plugins((
             DefaultPlugins,
-            RepliconPlugins,
+            RepliconPlugins.set(ServerPlugin {
+                tick_policy: TickPolicy::MaxTickRate(60),
+                visibility_policy: VisibilityPolicy::Blacklist,
+                ..Default::default()
+            }),
             RepliconRenetPlugins,
             SimpleBoxPlugin,
         ))
