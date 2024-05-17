@@ -1,0 +1,10 @@
+[package]
+name = "crash_server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = { version = "0.13", features=["serialize"] }
+bevy_replicon = "0.25.1"
+bevy_replicon_renet = "0.2.0"
+serde = "1"
